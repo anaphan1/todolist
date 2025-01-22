@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/styles/todolist.css">
+    <title>To-Do List</title>
+</head>
+<body>
+    <h1>Welcome, {{ username }}!</h1>
+    <h2>Your Tasks</h2>
+    <p>{{ get_flashed_messages()[0] }}</p>
+
+    <button id="open">Add New Task</button>
+
+    <div id="popup" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <form action="/addtask" method="POST">
+                <label for="task">Task Name</label>
+                <input type="text" name="task" id="task" placeholder="Enter a task name" required>
+                <label for="description">Description</label>
+                <input type="text" name="description" id="description" placeholder="Enter a task description" required>
+                <label for="due">Due Date</label>
+                <input type="datetime-local" name="due" id="due" placeholder="Due date" required>
+                <button type="submit" id="submit">Add Task</button>
+            </form>
+        </div>
+    </div>
+    <table>
+        <tr>
+            <th>Task</th>
+            <th>Description</th>
+            <th>Due Date</th>
+            <th>Action</th>
+        </tr>
+        {% for task, desc, due in tasks %}
+        <tr>
+            <td>{{ task }}</td>
+            <td>{{ desc }}</td>
+            <td>{{ due.rsplit("T", 1) | join(" ") }}</td>
+            <td>
+                <form action="/removetask" method="POST">
+                    <button type="submit" name="task" value="{{ task }}">Delete</button>
+                </form>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <script src="../static/scripts/todolist.js" defer></script>
+</body>
+</html>

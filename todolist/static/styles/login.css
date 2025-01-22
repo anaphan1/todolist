@@ -1,0 +1,125 @@
+.container-login {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    background: linear-gradient(-135deg, #ff7e5f, #feb47b);
+}
+
+.wrap-login {
+    width: 960px;
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 60px 50px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.login-pic {
+    width: 45%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-pic img {
+    max-width: 100%;
+    border-radius: 10px;
+}
+
+.login-form {
+    width: 45%;
+}
+
+.login-form-title {
+    font-family: 'Poppins', Arial, sans-serif;
+    font-size: 24px;
+    color: #333;
+    line-height: 1.5;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.input {
+    font-family: 'Poppins', Arial, sans-serif;
+    font-size: 15px;
+    color: #666666;
+    width: 100%;
+    background: #f2f2f2;
+    height: 50px;
+    border: 1px solid #ddd;
+    border-radius: 25px;
+    padding: 0 20px;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+}
+
+.input:focus {
+    border-color: #57b846;
+    outline: none;
+}
+
+.container-login-form-btn {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding-top: 10px;
+}
+
+.login-form-btn {
+    font-family: 'Montserrat', Arial, sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    text-transform: uppercase;
+    width: 100%;
+    max-width: 200px;
+    height: 50px;
+    border-radius: 25px;
+    background: #57b846;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background 0.3s ease;
+    cursor: pointer;
+    border: none;
+}
+
+.login-form-btn:hover {
+    background: #45a234;
+}
+
+a {
+    text-decoration: none;
+}
+
+a button {
+    font-family: 'Poppins', Arial, sans-serif;
+    font-size: 14px;
+    color: white;
+    background: #4158d0;
+    border: none;
+    border-radius: 25px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+a button:hover {
+    background: #2c3eb0;
+}
+
+p {
+    text-align: center;
+    font-family: 'Poppins', Arial, sans-serif;
+    font-size: 14px;
+    color: black;
+    margin-top: 20px;
+}

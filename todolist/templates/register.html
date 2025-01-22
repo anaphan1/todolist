@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/styles/register.css">
+    <title>Register</title>
+</head>
+<body>
+    <div class="container-register">
+        <div class="wrap-register">
+            <h1>Register</h1>
+            <p style="color:red;" id="error">{{ get_flashed_messages()[0] }}</p>
+            <form action="/adduser" method="POST">
+                <label for="username" hidden>Username:</label>
+                <input class="input" type="text" id="username" name="username" placeholder="Username" required>
+                <label for="password" hidden>Password:</label>
+                <input class="input" type="password" id="password" name="password" placeholder="Password" required>
+                <button class="register-btn" type="submit">Sign Up</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
