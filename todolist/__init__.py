@@ -19,6 +19,5 @@ def create_app(testing=False):
                 password TEXT NOT NULL
         );
         """)
-
     app.register_blueprint(views)
     return app

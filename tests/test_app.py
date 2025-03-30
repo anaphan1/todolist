@@ -1,6 +1,9 @@
 import pytest
-from todolist import create_app
 import sqlite3
+import os
+import sys
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+from todolist import create_app
 
 @pytest.fixture()
 def app():
