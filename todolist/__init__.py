@@ -11,13 +11,15 @@ def create_app(testing=False):
     if testing:
         app.testing = True
     with sqlite3.connect(db_path) as conn:
-        if testing:
-            conn.execute("DROP TABLE credentials")
         conn.execute("""
             CREATE TABLE IF NOT EXISTS credentials (
                 username TEXT UNIQUE NOT NULL,
                 password TEXT NOT NULL
         );
         """)
+        if testing:
+            conn.execute("""
+                DELETE FROM credentials
+            """)
     app.register_blueprint(views)
     return app
